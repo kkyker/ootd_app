@@ -1,0 +1,16 @@
+
+<center style = "margin-top: 100px; color: black; font-family: Tahoma; font-weight: bold; font-size: 1em;">
+<%= form_for @new_post, :html => { :multipart => true} do |f| %>
+Author: <font style = "font-weight: normal"> <%= current_user.name %> </font> <br />
+<br />
+Price: $<%= f.text_field :price, :size => 5 %> <br />
+<br/>
+Details: <%= f.text_area :content, :rows => 5%> <br />
+<br />
+<h4>Upload your outfit</h4>
+<%= f.file_field :image %>
+
+<%= f.submit "Create Post", class: "btn btn-normal btn-primary" %>
+<% end %>
+</center>
+

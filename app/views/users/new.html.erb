@@ -1,0 +1,38 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<center>
+<img style = "margin-top: -9.1%; position: fixed" align = "middle" src="/assets/burb1.jpg" alt="burb1" width="800" >
+
+
+
+<font style= "font-family: Tahoma">
+<div class="row" style = "margin-left: 8%; position: fixed">
+  <div class="span6 offset3">
+    <h3 style = "margin-bottom: 3px;">Sign Up</h3>
+    <%= form_for(@user,:html => { :multipart => true}) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+      <%= f.text_field :name, :placeholder => "Name" %>
+      <br />
+
+      <%= f.text_field :email, :placeholder => "Email"  %>
+      <br />
+
+      <%= f.password_field :password, :placeholder => "Password"  %>
+      <br />
+
+      <%= f.password_field :password_confirmation, :placeholder => "Password Confirmation"  %>
+      <br />
+      <h5 style = "margin-bottom: 0px">Select profile picture</h5>
+      <%= f.file_field :image, style: "margin-left: 90px; margin-bottom: 10px" %>
+
+      <%= f.submit "Create my account", class: "btn btn-normal btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</font>
+</center>

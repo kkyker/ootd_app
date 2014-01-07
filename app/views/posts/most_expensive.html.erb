@@ -1,0 +1,24 @@
+<%= render 'sidebar' %>
+
+<center>
+<% @Posts.each do |post| %>
+<h3 style = "color: black; font-family: Tahoma; font-weight: bold; font-size: 1.7em"><%= post.created_at.strftime("%B %e, %Y") %></h3>
+
+
+<%= link_to image_tag(post.image.url, width: "300", style: "margin-left: 7%; border: 3px solid black"), user_path(post.user_id)%>
+
+
+
+<%= link_to image_tag("/assets/like.png", width: "40px", style: "margin-top: -1%"), update_likes_post_path(post.id) %>
+<font style = "font-weight: bold; font-size: 150%" > <%= post.likes %> </font>
+
+<p style = "color: black; font-family: Tahoma; font-size: 80%; margin-top: 15px; margin-left: 30%; margin-right: 30%">
+	<font style = "font-weight: bold">Author: </font> <%= link_to User.find(post.user_id).name, user_path(post.user_id)%> 
+	<font style = "font-weight: bold">Price: </font> $<%= post.price %> 
+</p>
+<p style = "color: black; font-family: Tahoma; font-size: 1 em; margin-top: -8px; margin-left: 30%; margin-right: 30%">
+	<font style = "font-weight: bold">Details: </font> <%= post.content %>
+</p>
+<br />
+<% end %>
+</center>

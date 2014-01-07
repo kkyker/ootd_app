@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+
+
+
+<h2 style = "font-family: Tahoma; margin-top: 100px; margin-left: 15px; margin-bottom: 20px">OOTD Users (<%= @Users.count %>)</h2>
+
+
+<img style = "margin-top: -13%; margin-left: 50%; width: 16%; position: fixed" src="/assets/im5.jpg" alt="im5">
+<img style = "margin-top: -14%; margin-left: 70%; width: 16%; position: fixed" src="/assets/im6.jpg" alt="im6">
+
+<body style = "font-family: Tahoma">
+
+<ul style = "list-style: none">
+
+	<% @Users.each do |user| %>
+	<li>
+		<h3> <%= link_to user.name, user %></h3>
+		<p style = "margin-left: 25px">Number of Posts: <%= user.posts.count%></p>
+		<p style = "margin-left: 25px">Total Money Spent: <%= total_price(user.posts)%></p>
+		<p style = "margin-left: 25px">Average Price of Outfit <%= average_price(user.posts)%></p>
+		<p style = "margin-left: 25px">Total Likes: <%= total_likes(user.posts)%></p>
+		<p style = "margin-left: 25px">Average Likes per Outfit: <%= average_likes(user.posts)%></p>
+	</li>
+	<% end %>
+	<br />
+>
+<ul>
+</body>
+
+
+</html>

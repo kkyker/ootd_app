@@ -1,0 +1,31 @@
+<div style = "position: fixed; width: 100%; margin-top: -4%">
+
+<h1 style = "color: #9999FF; margin-top: 2%; background: #ADD8E6; padding-top: 8px; padding-bottom: 8px; margin-bottom: 0px">
+	
+	<% if signed_in? %>
+
+	<font style = "font-size: 50%; font-family: Tahoma; float: right; margin-right: 40px"> <%= link_to "Sign Out", signout_path, method: "delete" %></font>
+
+	<font style = "font-size: 50%; font-family: Tahoma; float: right;margin-right: 40px"> <%= link_to "Users", users_path %></font>
+	
+	<font style = "font-family: Tahoma; font-size: 140%; text-align: center;"> <%= link_to "OOTD", root_url %></font>
+
+	<font style = "font-size: 50%; font-family: Tahoma; float: left; width: 40.3%; margin-left: 40px"> <%= link_to current_user.name, user_path(current_user.id) %></font>
+	
+	<% else %>
+	
+	<font style = "font-size: 50%; font-family: Tahoma; float: right; margin-right: 40px"> <%= link_to "Sign in", signin_path %></font>
+
+	<font style = "font-size: 140%; font-family: Tahoma; text-align: center; margin-left: 43.5%"> <%= link_to "OOTD", root_url %></font>
+	 
+	<% end %>
+
+	
+
+</h1>
+
+<h3 style = "color: #ADD8E6; background: rgb(72, 156, 223); margin-top: 0px; font-size: 130%; text-align: center">Outfit of the Day</h3>
+</div>
+
+<br />
+<br />
